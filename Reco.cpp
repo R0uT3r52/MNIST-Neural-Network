@@ -58,7 +58,7 @@ void init() {
 
 //	+-------------------+
 //	|RANDOM WEIGHTS INIT|
-//  +-------------------+
+//  	+-------------------+
 	for (int i = 0; i < 784; i++) {
 		for (int j = 0; j < 256; j++) {
 			w1[i][j] = (double)(rand()) / RAND_MAX * (b - a) + a;
