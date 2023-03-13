@@ -190,7 +190,7 @@ void Write_Weights() {
 		cout << "+-------------------------+" << endl;
 	}
 	else {
-		cout << "Some error with weights2.txt file" << endl;
+		cout << "Some error with 'weights2.txt' file" << endl;
 		cout << "Unable to write weights to file" << endl;
 	}
 	fout.close();
@@ -214,7 +214,7 @@ void Read_Weights() {
 		cout << "Weights loaded" << endl;
 	}
 	else {
-		cout << "Some error with weights2.txt file" << endl;
+		cout << "Some error with 'weights2.txt' file" << endl;
 		cout << "Unable to read weights from file" << endl;
 	}
 }
