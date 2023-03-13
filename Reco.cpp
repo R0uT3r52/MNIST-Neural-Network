@@ -174,20 +174,27 @@ void Write_Weights() {
 	fout.close();
 	cout << "WEIGHTS FILE CLEARED BEFORE OVERWRITTEN" << endl;
 	fout.open("weights2.txt");
-	for (int i = 0; i < 784; i++) {
-		for (int j = 0; j < 256; j++) {
-			fout << w1[i][j] << " ";
+	if (fout.is_open()) {
+		for (int i = 0; i < 784; i++) {
+			for (int j = 0; j < 256; j++) {
+				fout << w1[i][j] << " ";
+			}
 		}
+		for (int i = 0; i < 256; i++) {
+			for (int j = 0; j < 10; j++) {
+				fout << w2[i][j] << " ";
+			}
+		}
+		cout << "+-------------------------+" << endl;
+		cout << "| ALL WEIGHTS ARE WRITTEN |" << endl;
+		cout << "+-------------------------+" << endl;
 	}
-	for (int i = 0; i < 256; i++) {
-		for (int j = 0; j < 10; j++) {
-			fout << w2[i][j] << " ";
-		}
+	else {
+		cout << "Some error with weights2.txt file" << endl;
+		cout << "Unable to write weights to file" << endl;
 	}
 	fout.close();
-	cout << "+-------------------------+" << endl;
-	cout << "| ALL WEIGHTS ARE WRITTEN |" << endl;
-	cout << "+-------------------------+" << endl;
+	
 }
 void Read_Weights() {
 	fstream fin;
@@ -207,7 +214,8 @@ void Read_Weights() {
 		cout << "Weights loaded" << endl;
 	}
 	else {
-		cout << "Some error with this file" << endl;
+		cout << "Some error with weights2.txt file" << endl;
+		cout << "Unable to read weights from file" << endl;
 	}
 }
 
@@ -248,7 +256,7 @@ int main()
 			}
 		}
 		else {
-			cout << "Some error with this file." << endl;
+			cout << "Some error with 'MNIST_train.txt' file." << endl;
 		}
 		file.close();
 		//	+-----------------------+
@@ -302,7 +310,7 @@ int main()
 			cout << "+---------------------------+" << endl;
 		}
 		else {
-			cout << "Some error with this file" << endl;
+			cout << "Some error with 'MNIST_test.txt' file" << endl;
 		}
 		break;
 	default:
