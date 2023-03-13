@@ -170,10 +170,10 @@ void Train() {
 
 void Write_Weights() {
 	fstream fout;
-	fout.open("C:\\Users\\nikit\\Desktop\\weights2.txt", std::ios::out);
+	fout.open("Data\\weights2.txt", std::ios::out);
 	fout.close();
 	cout << "WEIGHTS FILE CLEARED BEFORE OVERWRITTEN" << endl;
-	fout.open("C:\\Users\\nikit\\Desktop\\weights.txt");
+	fout.open("weights2.txt");
 	for (int i = 0; i < 784; i++) {
 		for (int j = 0; j < 256; j++) {
 			fout << w1[i][j] << " ";
@@ -191,7 +191,7 @@ void Write_Weights() {
 }
 void Read_Weights() {
 	fstream fin;
-	fin.open("C:\\Users\\nikit\\Desktop\\weights2.txt");
+	fin.open("Data\\weights2.txt");
 	if (fin.is_open()) {
 		cout << "Weights file opened" << endl;
 		for (int i = 0; i < 784; i++) {
@@ -215,7 +215,7 @@ int main()
 {
 	// INIT -> TRAIN(FEEDFORWARD -> BACKPROP) 
 	fstream file;
-	string ff, path = "C:\\Users\\nikit\\Desktop\\MNIST_train.txt";
+	string ff, path = "Data\\MNIST_train.txt";
 	int choose, correct_ans = 0; double accuracy;
 	cout << "What you want to do(1-Train; 2-Test): ";
 	cin >> choose;
@@ -259,7 +259,7 @@ int main()
 	case 2:
 		init();
 		Read_Weights();
-		file.open("C:\\Users\\nikit\\Desktop\\MNIST_test.txt");
+		file.open("Data\\MNIST_test.txt");
 		if (file.is_open()) {
 			cout << "Test file Opened" << endl;
 			file >> ff;
