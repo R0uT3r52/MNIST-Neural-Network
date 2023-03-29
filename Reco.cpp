@@ -256,7 +256,7 @@ int main()
 			}
 		}
 		else {
-			cout << "Some error with 'MNIST_train.txt' file." << endl;
+			cout << "Can't find 'MNIST_train.txt' file." << endl;
 		}
 		file.close();
 		//	+-----------------------+
@@ -310,7 +310,7 @@ int main()
 			cout << "+---------------------------+" << endl;
 		}
 		else {
-			cout << "Some error with 'MNIST_test.txt' file" << endl;
+			cout << "Can't find 'MNIST_test.txt' file." << endl;
 		}
 		break;
 	default:
