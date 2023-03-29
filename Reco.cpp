@@ -11,7 +11,7 @@ using namespace std;
 double** w1 = new double* [784]; double** w2 = new double* [256]; // inputs - layer1
 double* inputs = new double[784]; double* l2 = new double[256];   // l2 - layer2
 double* l3 = new double[10]; int rights; double a = -1, b = 1;  // l3 - layer3
-double expected[10]; double* theta2; double* theta3; double LR = 0.001; double momentum = 0.9; double epsilon = 0.001; // try momentum = 0.7 or lower
+double expected[10]; double* theta2; double* theta3; double LR = 0.001; double momentum = 0.9; double epsilon = 0.001;
 double** delta1 = new double* [784]; double** delta2 = new double* [256];
 double outputs[10];
 
