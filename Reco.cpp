@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <stdlib.h>
 #include <ctime>
@@ -157,9 +157,9 @@ void Train() {
 		}
 	}
 //	+--------------------+
-//	| NUM OF EPOCHS: 256 |
+//	| NUM OF EPOCHS: 128 |
 //	+--------------------+
-	for (int i = 0; i < 256; i++) {
+	for (int i = 0; i < 128; i++) {
 		FeedForward();
 		backprop();
 		if (Square_Err() < epsilon) {
