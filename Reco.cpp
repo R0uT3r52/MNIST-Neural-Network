@@ -173,7 +173,7 @@ void Write_Weights() {
 	fout.open("Data\\weights2.txt", std::ios::out);
 	fout.close();
 	cout << "WEIGHTS FILE CLEARED BEFORE OVERWRITTEN" << endl;
-	fout.open("weights2.txt");
+	fout.open("Data\\weights2.txt");
 	if (fout.is_open()) {
 		for (int i = 0; i < 784; i++) {
 			for (int j = 0; j < 256; j++) {
